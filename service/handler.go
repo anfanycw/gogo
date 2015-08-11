@@ -40,6 +40,7 @@ func OccupancyPostHandler(w http.ResponseWriter, r *http.Request) {
 	loc, ok := locations[room.Location]
 	if ok {
 		loc.Status = room.Status
+		loc.Name = ""
 	}
 
 	log.Printf("%s : %+v", room.Location, *loc)
