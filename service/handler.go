@@ -64,7 +64,6 @@ func ReservationGetHandler(w http.ResponseWriter, r *http.Request) {
 	if err := json.NewEncoder(w).Encode(loc); err != nil {
 		panic(err)
 	}
-	w.WriteHeader(http.StatusOK)
 }
 
 func ReservationPostHandler(w http.ResponseWriter, r *http.Request) {
