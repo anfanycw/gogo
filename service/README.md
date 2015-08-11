@@ -9,7 +9,9 @@
 ## POST /occupancy
 
     Post Body
-    { “status”: ”VACANT” | ”OCCUPIED” }
+    {
+        “status”: ”VACANT” | ”OCCUPIED”
+    }
 
 
 ## GET /occupancy
