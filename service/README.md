@@ -9,14 +9,14 @@
 ## POST /occupancy
 
     Post Body
-    { status: ‘occupied’ | ‘vacant’ }
+    { “status”: ”VACANT” | ”OCCUPIED” }
 
 
 ## GET /occupancy
 
     Response
     {
-        “vacant": [  “upstairs left”, “upstairs right”]
+        “vacant”: [  “upstairs left”, “upstairs right”]
     }
 
 
