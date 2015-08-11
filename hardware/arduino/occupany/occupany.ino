@@ -26,13 +26,13 @@ void loop()
   {
     digitalWrite(ledPin, HIGH);
     Serial.println("OCCUPIED");
-    delay(500);
+    delay(250);
   } 
 
   if (vacantState == LOW)
   {
     digitalWrite(ledPin, LOW);
     Serial.println("VACANT");
-    delay(500);
+    delay(250);
   }
 }
