@@ -9,4 +9,4 @@ Assumes you have a Sparkfun Inventor's Kit
 ## Raspberry Pi Setup
 Assumes you have CanaKit Raspbery Pi with Wifi
 1. Install python, python-pip, and pyserial in Raspberry Pi
-2. Run `python occupancy_serial_reader.py`
+2. Run `python occupancy_serial_reader.py` and `python occupancy_serial_writer.py`
