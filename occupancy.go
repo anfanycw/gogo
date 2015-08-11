@@ -6,8 +6,6 @@ type Occupancy struct {
 
 type Occupancies []Occupancy
 
-type Stat struct {
-	Stat	string `json:"string"`
+type Status struct {
+	Value	string `json:"status"`
 }
-
-type Status []Stat

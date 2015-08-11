@@ -26,20 +26,16 @@ func OccupancyGetHandler(w http.ResponseWriter, r *http.Request) {
 func OccupancyPostHandler(w http.ResponseWriter, r *http.Request) {
     var status Status
     
-    decoder := json.NewDecoder(r.Body)   
+    decoder := json.NewDecoder(r.Body)
     err := decoder.Decode(&status)
     if err != nil {
         panic(err)
     }
-    log.Println(status.stat)
+    log.Println(status.Value)
 
     // w.Header().Set("Content-Type", "application/json; charset=UTF-8")
     // w.WriteHeader(http.StatusCreated)
     // if err := json.NewEncoder(w).Encode(t); err != nil {
     //     panic(err)
     // }
-}
-
-func updateOccupancies(status Status) {
-    locations := []string{status.status}
 }
