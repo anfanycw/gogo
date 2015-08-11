@@ -8,30 +8,39 @@ import (
     //"github.com/gorilla/mux"
 )
 
-var locations []string
-
 func OccupancyGetHandler(w http.ResponseWriter, r *http.Request) {
-    locations := []string{"here", "here too"}
-    occ := Occupancies {
-        Occupancy{Locations: locations},
+    var vacancy []string
+    for key, value := range locations {
+        if value == "VACANT" {
+            vacancy = append(vacancy, key)
+        }
+    }
+
+    result := &Occupancy{
+        Vacant: vacancy,
     }
     
     w.Header().Set("Content-Type", "application/json; charset=UTF-8")
     w.WriteHeader(http.StatusOK)
-    if err := json.NewEncoder(w).Encode(occ); err != nil {
+    if err := json.NewEncoder(w).Encode(result); err != nil {
         panic(err)
     }
 }
 
 func OccupancyPostHandler(w http.ResponseWriter, r *http.Request) {
-    var status Status
+    var room Restroom
     
     decoder := json.NewDecoder(r.Body)
-    err := decoder.Decode(&status)
+    err := decoder.Decode(&room)
     if err != nil {
         panic(err)
     }
-    log.Println(status.Value)
+
+    _, ok := locations[room.Location]
+    if ok {
+        locations[room.Location] = room.Status
+    }
+    log.Printf("%+v", locations)
 
     // w.Header().Set("Content-Type", "application/json; charset=UTF-8")
     // w.WriteHeader(http.StatusCreated)

@@ -1,11 +1,10 @@
 package main
 
 type Occupancy struct {
-    Locations	[]string `json:[]string`
+    Vacant	[]string `json:"vacant"`
 }
 
-type Occupancies []Occupancy
-
-type Status struct {
-	Value	string `json:"status"`
+type Restroom struct {
+	Status		string `json:"status"`
+	Location	string `json:"location"`
 }
