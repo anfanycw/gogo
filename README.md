@@ -8,4 +8,5 @@
 * Go service to receive POST and GET occupancy requests
 
 ## Command-line tool
-* Go command line tool to make GET vacancy requests
+* GET vacancy requests
+* POST reservation requests
