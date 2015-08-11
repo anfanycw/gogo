@@ -1,21 +1,21 @@
 package main
 
 import (
-    "log"
-    "net/http"
+	"log"
+	"net/http"
 )
 
-var locations map[string]string
+var locations map[string]*Restroom
 
 func main() {
-	locations = map[string]string {
-		"upstairs left": "VACANT",
-		"upstairs right": "VACANT",
-		"downstairs men": "VACANT",
-		"downstairs women": "VACANT",
-		"downstairs shower": "VACANT",
+	locations = map[string]*Restroom{
+		"upstairs left":     {Status: Vacant},
+		"upstairs right":    {Status: Vacant},
+		"downstairs men":    {Status: Vacant},
+		"downstairs women":  {Status: Vacant},
+		"downstairs shower": {Status: Vacant},
 	}
 
-    router := NewRouter()
-    log.Fatal(http.ListenAndServe(":8080", router))
+	router := NewRouter()
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
