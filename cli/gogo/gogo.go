@@ -20,7 +20,7 @@ func main() {
   app.Action = func(c *cli.Context) {
     println("Vacancy")
 
-    resp, err := http.Get("http://localhost:4567/occupancy")
+    resp, err := http.Get("http://ec2-52-27-166-124.us-west-2.compute.amazonaws.com:8080/occupancy")
     if err != nil {
         println(fmt.Sprintf("Sorry, the service is unavailable: %v", err))
         return
